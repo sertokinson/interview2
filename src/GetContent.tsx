@@ -36,6 +36,7 @@ import HATEOAS from "./content/HATEOAS";
 import SpringBoot from "./content/SpringBoot";
 import JMS from "./content/JMS";
 import Kafka from "./content/Kafka";
+import Stateless from "./content/Stateless";
 
 export default class GetContent extends React.Component {
     render() {
@@ -76,6 +77,7 @@ export default class GetContent extends React.Component {
             case 'Spring Boot': return <SpringBoot />
             case 'JMS': return <JMS />
             case 'Kafka': return <Kafka />
+            case 'Stateless Stateful': return <Stateless />
             default :return <OOP />
         }
     }

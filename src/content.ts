@@ -147,4 +147,8 @@ export const content = [
         header: 'Kafka',
         checked: false
     },
+    {
+        header: 'Stateless Stateful',
+        checked: false
+    },
 ];
