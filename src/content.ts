@@ -151,4 +151,8 @@ export const content = [
         header: 'Stateless Stateful',
         checked: false
     },
+    {
+        header: 'Алгоритмы поиска',
+        checked: false
+    },
 ];

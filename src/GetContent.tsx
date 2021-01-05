@@ -37,6 +37,7 @@ import SpringBoot from "./content/SpringBoot";
 import JMS from "./content/JMS";
 import Kafka from "./content/Kafka";
 import Stateless from "./content/Stateless";
+import Search from "./content/Search";
 
 export default class GetContent extends React.Component {
     render() {
@@ -78,6 +79,7 @@ export default class GetContent extends React.Component {
             case 'JMS': return <JMS />
             case 'Kafka': return <Kafka />
             case 'Stateless Stateful': return <Stateless />
+            case 'Алгоритмы поиска': return <Search />
             default :return <OOP />
         }
     }
