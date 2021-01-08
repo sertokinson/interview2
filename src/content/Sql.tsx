@@ -92,7 +92,7 @@ export default class Sql extends React.Component {
                 <SyntaxHighlighter language="sql" style={darcula}>
                     {"SELECT * FROM characters WHERE weapon = 'pistol';"}
                 </SyntaxHighlighter>
-                <Title>HAVING</Title>]
+                <Title>HAVING</Title>
                 <Paragraph style={{fontSize: 20}}>
                     является указателем на результат выполнения агрегатных функций. Агрегатной функцией в языке SQL называется функция, возвращающая какое-либо одно значение по набору значений столбца. Такими функциями являются: SQL COUNT(), SQL MIN(), SQL MAX(), SQL AVG(), SQL SUM().
                 </Paragraph>

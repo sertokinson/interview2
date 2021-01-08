@@ -221,7 +221,37 @@ export default class Sort extends React.Component {
                     "    for (int i = 0; i < lengthLeft; i++)\n" +
                     "        leftArray[i] = array[left+i];\n" +
                     "    for (int i = 0; i < lengthRight; i++)\n" +
-                    "        rightArray[i] = array[mid+i+1];\n"}
+                    "        rightArray[i] = array[mid+i+1];\n" +
+                    "\n" +
+                    "    // итераторы содержат текущий индекс временного подмассива\n" +
+                    "    int leftIndex = 0;\n" +
+                    "    int rightIndex = 0;\n" +
+                    "\n" +
+                    "    // копируем из leftArray и rightArray обратно в массив  \n" +
+                    "    for (int i = left; i < right + 1; i++) {\n" +
+                    "        // если остаются нескопированные элементы в R и L, копируем минимальный\n" +
+                    "        if (leftIndex < lengthLeft && rightIndex < lengthRight) {\n" +
+                    "            if (leftArray[leftIndex] < rightArray[rightIndex]) {\n" +
+                    "                array[i] = leftArray[leftIndex];\n" +
+                    "                leftIndex++;\n" +
+                    "            }\n" +
+                    "            else {\n" +
+                    "                array[i] = rightArray[rightIndex];\n" +
+                    "                rightIndex++;\n" +
+                    "            }\n" +
+                    "        }\n" +
+                    "        // если все элементы были скопированы из rightArray, скопировать остальные из leftArray\n" +
+                    "        else if (leftIndex < lengthLeft) {\n" +
+                    "            array[i] = leftArray[leftIndex];\n" +
+                    "            leftIndex++;\n" +
+                    "        }\n" +
+                    "        // если все элементы были скопированы из leftArray, скопировать остальные из rightArray\n" +
+                    "        else if (rightIndex < lengthRight) {\n" +
+                    "            array[i] = rightArray[rightIndex];\n" +
+                    "            rightIndex++;\n" +
+                    "        }\n" +
+                    "    }\n" +
+                    "}\n"}
                 </SyntaxHighlighter>
                 <Paragraph style={{fontSize: 20}}>
                     Сложность <Text code>O(nlog n)</Text>
