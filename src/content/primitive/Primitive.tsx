@@ -1,11 +1,9 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import {Image, Typography} from 'antd';
+import {Image, Typography, Table} from 'antd';
 import SyntaxHighlighter from "react-syntax-highlighter";
 import {darcula} from "react-syntax-highlighter/dist/esm/styles/hljs";
 import stack from './Stack.jpg';
-import table_1 from "./table-1.png";
-import table_2 from "./table-2.png";
 
 const {Paragraph, Title, Text} = Typography;
 
@@ -111,8 +109,60 @@ export default class Primitive extends React.Component {
                     </ul>
                 </Paragraph>
                 <Image src={stack}/>
-                <Image width={800} src={table_1}/>
-                <Image width={800} src={table_2}/>
+                <Table pagination={false}
+                       style={{marginTop:15}}
+                       dataSource={[
+                           {
+                               parameter: 'Использование',
+                               stack: 'Стек используется по частям во время выполнения потока',
+                               heap: 'Все приложение использует пространство кучи во время выполнения'
+                           },
+                           {
+                               parameter: 'Размер',
+                               stack: 'Размер стка ограничен в зависимости от ОС и обычно меньше размера кучи',
+                               heap: 'Размер кучи не ограничен'
+                           },
+                           {
+                               parameter: 'Место хранения',
+                               stack: 'Хранит только примитивные переменные и ссылке на объекты созданные в пространстве кучи',
+                               heap: 'Все вновь созданные объекты хранятся здесь'
+                           },
+                           {
+                               parameter: 'Порядок',
+                               stack: 'Доступ к ней осуществляется с помощью системы выделения памяти "Последний пришел - первым вышел" (LIFO)',
+                               heap: 'Доступ к этой памяти осуществляется с помощью сложных методов управления памятью, которые включают молодое, старое и постоянное поколение'
+                           },
+                           {
+                               parameter: 'Жизнь',
+                               stack: 'Память стека существует только до тех пор, пока работает текущий метод',
+                               heap: 'Пространство кучу существует до тех пор пока приложение работает'
+                           },
+                           {
+                               parameter: 'КПД',
+                               stack: 'Сравнительно намного быстрее выделить по сравнению с кучей',
+                               heap: 'Медленее выделять по сравнении со стеком'
+                           },
+                           {
+                               parameter: 'Распределение',
+                               stack: 'Эта память автоматически выделяется и освобождается, когда метод вызывается и возвращается соотвественно',
+                               heap: 'Пространство кучи выделяется, когда новые объекты создаются и освобождаются сборщиком Garbage, когда на них больше нет ссылок'
+                           }
+                       ]}
+                       columns={[
+                           {
+                               title: 'Параметр',
+                               dataIndex: 'parameter'
+                           },
+                           {
+                               title: 'Память стека',
+                               dataIndex: 'stack'
+                           },
+                           {
+                               title: 'Куча пространства',
+                               dataIndex: 'heap'
+                           }
+                       ]}>
+                </Table>
             </Typography>)
     }
 }
