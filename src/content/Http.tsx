@@ -24,7 +24,6 @@ export default class Http extends React.Component {
                             протокола <Text code>HTTP</Text> с надстройкой шифрования;</li>
                         <li>передаваемые по протоколу <Text code>HTTP</Text> данные не защищены, <Text code>HTTPS</Text> обеспечивает конфиденциальность информации путем ее шифрования;</li>
                         <li><Text code>HTTP</Text> использует порт 80, <Text code>HTTPS</Text> — порт 443.</li>
-                        <li></li>
                     </ul>
                 </Paragraph>
                 <Title>Использование HTTPS</Title>

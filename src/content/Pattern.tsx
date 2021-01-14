@@ -56,7 +56,7 @@ export default class Pattern extends React.Component {
                         <li><Text code>Observer</Text>(Наблюдатель) - позволяет одним обьектам следить и реагировать на события, происходящие в других объектах.</li>
                         <li><Text code>State</Text>(Состояние) - объект может изменять свое поведение в зависимости от его состояния.</li>
                         <li><Text code>Iterator</Text>(Итератор) - последовательно осуществляет доступ к элементам объекта коллекции, не зная его основного представления.</li>
-                        <li>Цепочка обязанностей - о поведенческий паттерн проектирования, который позволяет передавать запросы последовательно по цепочке обработчиков. Каждый последующий обработчик решает, может ли он обработать запрос сам и стоит ли передавать запрос дальше по цепи.</li>
+                        <li>Цепочка обязанностей - позволяет передавать запросы последовательно по цепочке обработчиков. Каждый последующий обработчик решает, может ли он обработать запрос сам и стоит ли передавать запрос дальше по цепи.</li>
                     </ul>
                 </Paragraph>
                 <Title>Порождающие</Title>
@@ -687,7 +687,7 @@ export default class Pattern extends React.Component {
                 <SyntaxHighlighter language="java" style={darcula}>
                     {"interface Iterator {\n" +
                     "    boolean hasNext();\n" +
-                    "    Object next();\n" +
+                    "    ObjectJava next();\n" +
                     "}\n" +
                     "class Numbers {\n" +
                     "    public int num[] = {1 , 2, 3};\n" +
@@ -700,7 +700,7 @@ export default class Pattern extends React.Component {
                     "            if(ind < num.length) return true;\n" +
                     "            return false;\n" +
                     "        }\n" +
-                    "        public Object next() {\n" +
+                    "        public ObjectJava next() {\n" +
                     "            if(this.hasNext()) return num[ind++];\n" +
                     "            return null;\n" +
                     "        }\n" +

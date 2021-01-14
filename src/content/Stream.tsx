@@ -13,7 +13,7 @@ export default class Stream extends React.Component {
                 <Title>Общие понятия</Title>
                 <Title level={2}>Lambda</Title>
                 <Paragraph style={{fontSize: 20}}>
-                    Это упрощенное написание аннонимного класса, который является реализацие функционального интерфейса
+                    Это упрощенное написание аннонимного класса, который является реализацией функционального интерфейса
                 </Paragraph>
                 <Title level={2}>Функциональный интерфейс</Title>
                 <Paragraph style={{fontSize: 20}}>

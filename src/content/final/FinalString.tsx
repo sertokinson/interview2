@@ -56,8 +56,8 @@ export default class FinalString extends React.Component {
                     Из неизменяемых объектов получаются лучшие ключи HashMap или HashSet. Некоторые изменяемые объекты изменяют значение hashcode() в зависимости от своего состояния
                 </Paragraph>
                 <Paragraph style={{fontSize: 20}}>
-                </Paragraph>
                     Обозначая метод класса модификатором final, мы имеем ввиду, что ни один производный класс не в состоянии переопределить этот метод, изменив его внутреннюю реализацию. Другими словами, речь идет о финальной версии метода.
+                </Paragraph>
                 <Title>String</Title>
                 <Paragraph style={{fontSize: 20}}>
                     Класс <Text code>String</Text> объявлен, как <Text code>final</Text>.

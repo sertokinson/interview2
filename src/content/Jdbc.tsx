@@ -1,6 +1,8 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import {Typography} from 'antd';
+import SyntaxHighlighter from "react-syntax-highlighter";
+import {darcula} from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const {Paragraph, Text, Title} = Typography;
 
@@ -21,11 +23,45 @@ export default class Jdbc extends React.Component {
                     который направлен на стандартизацию ORM продуктов и
                     описывает требования к объектам, для сохранения их в базах данных, интерфейсы для сохранения объектов и интерфейсы для получения объектов из БД.
                 </Paragraph>
-
                 <Paragraph style={{fontSize: 20}}>
                     DAO (data access object) — один из наиболее распространенных паттернов проектирования, "Доступ к данным". Его смысл прост — создать в приложении слой, который отвечает только за доступ к данным, и больше ни за что. Достать данные из БД, обновить данные, удалить данные — и все.
                 </Paragraph>
-
+                <Title level={2}>Драйвер JDBC</Title>
+                <Paragraph style={{fontSize: 20}}>
+                    Драйвер JDBC - это реализация API JDBC, используемая для подключения к базе данных определенного типа. Чтобы подключиться к базе данных, нам просто нужно инициализировать драйвер и открыть соединение с базой данных.
+                </Paragraph>
+                <Paragraph style={{fontSize: 20}}>
+                    Первый шаг. Подключаем зависимость
+                </Paragraph>
+                <SyntaxHighlighter language="java" style={darcula}>
+                    {"<dependency>\n" +
+                    "    <groupId>mysql</groupId>\n" +
+                    "    <artifactId>mysql-connector-java</artifactId>\n" +
+                    "    <version>6.0.6</version>\n" +
+                    "</dependency>"}
+                </SyntaxHighlighter>
+                <Paragraph style={{fontSize: 20}}>
+                    Второй шаг. зарегистрируем драйвер, используя метод Class.forName() , который динамически загружает класс драйвера
+                </Paragraph>
+                <Paragraph style={{fontSize: 20}}>
+                    Третий шаг. Чтобы открыть соединение, мы можем использовать метод getConnection () класса DriverManager . Этот метод требует подключения URL String параметр:
+                </Paragraph>
+                <SyntaxHighlighter language="java" style={darcula}>
+                    {"Connection con = DriverManager\n" +
+                    "  .getConnection(\"jdbc:mysql://localhost:3306/myDb\", \"user1\", \"pass\");"}
+                </SyntaxHighlighter>
+                <Paragraph style={{fontSize: 20}}>
+                    Четвертый шаг. Мы можем создать стацтмен и передать в execute тело sql запроса, либо создать preparedStatement и передать его туда
+                </Paragraph>
+                <Paragraph style={{fontSize: 20}}>
+                    Пятый шаг. У нас есть ResultSet, считываем построчно с помощью метода next, если он возвращает true то у нас есть следующая строка и берем значению по типу и названию столбца например getString("name") можем это значение замапить т.е. положить на объект
+                </Paragraph>
+                <Paragraph style={{fontSize: 20}}>
+                    Шестой шаг. Когда мы больше не используем, необходимо закрыть соединение, чтобы освободить ресурсы базы данных. Это можно сделать с помощью API close ()
+                </Paragraph>
+                <SyntaxHighlighter language="java" style={darcula}>
+                    con.close();
+                </SyntaxHighlighter>
                 <Title level={2}>Statement и PreparedStatement</Title>
                 <Paragraph style={{fontSize: 20}}>
                     JDBC API Statement используется для выполнения SQL запросов к базе данных.

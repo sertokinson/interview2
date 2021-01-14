@@ -1,10 +1,8 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import {Typography} from 'antd';
-import SyntaxHighlighter from "react-syntax-highlighter";
-import {darcula} from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-const {Paragraph, Text} = Typography;
+const {Paragraph} = Typography;
 
 export default class HATEOAS extends React.Component {
     render() {

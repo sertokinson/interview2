@@ -25,7 +25,7 @@ import Database from "./content/Database";
 import TryWithResources from "./content/TryWithResources";
 import IOvsNIO from "./content/IOvsNIO";
 import NoSql from "./content/NoSql";
-import Object from "./content/Object";
+import ObjectJava from "./content/ObjectJava";
 import Type from "./content/Type";
 import Socket from "./content/Socket";
 import Exceptions from "./content/exceptions/Exceptions";
@@ -67,7 +67,7 @@ export default class GetContent extends React.Component {
             case 'try with resources': return <TryWithResources />
             case 'io vs nio': return <IOvsNIO />
             case 'no sql': return <NoSql />
-            case 'Object': return <Object />
+            case 'Object': return <ObjectJava />
             case 'Типы': return <Type />
             case 'Socket': return <Socket />
             case 'Exceptions': return <Exceptions />

@@ -32,9 +32,9 @@ export default class TryWithResources extends React.Component {
                     У классов, которые используют внешние ресурсы, есть специальный метод для их освобождения — <Text code>close()</Text>.
                 </Paragraph>
                 <SyntaxHighlighter language="java" style={darcula}>
-                    {"String path = \"c:\\projects\\log.txt\";"+
-                        "FileOutputStream output = new FileOutputStream(path);"+
-                        "output.write(1);"+
+                    {"String path = \"c:\\projects\\log.txt\";\n"+
+                        "FileOutputStream output = new FileOutputStream(path);\n"+
+                        "output.write(1);\n"+
                         "output.close();"}
                 </SyntaxHighlighter>
                 <Paragraph style={{fontSize: 20}}>

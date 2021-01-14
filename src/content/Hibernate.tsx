@@ -62,6 +62,30 @@ export default class Hibernate extends React.Component {
                 <Paragraph style={{fontSize: 20}}>
                     решение заключается в добавлении JOIN FETCH к запросу
                 </Paragraph>
+                <Paragraph style={{fontSize: 20}}>
+                  Допустим, у вас есть коллекция из Car объектов (строк базы данных), и каждый Car имеет коллекцию из Wheel объектов (также строк). Другими словами, Car → Wheel -это отношение 1-to-many.
+                </Paragraph>
+                <Paragraph style={{fontSize: 20}}>
+                    Теперь предположим, что вам нужно перебрать все автомобили и для каждого из них распечатать список колес. Наивная реализация O/R будет делать следующее:
+                </Paragraph>
+                <SyntaxHighlighter language="sql" style={darcula}>
+                    SELECT * FROM Cars;
+                </SyntaxHighlighter>
+                <Paragraph style={{fontSize: 20}}>
+                    А потом для каждого Car :
+                </Paragraph>
+                <SyntaxHighlighter language="sql" style={darcula}>
+                    SELECT * FROM Wheel WHERE CarId = ?
+                </SyntaxHighlighter>
+                <Paragraph style={{fontSize: 20}}>
+                     Другими словами, у вас есть один выбор для автомобилей, а затем N дополнительных выборов, где N-общее количество автомобилей.
+                </Paragraph>
+                <Paragraph style={{fontSize: 20}}>
+                    В качестве альтернативы можно было бы получить все колеса и выполнить поиск в памяти:
+                </Paragraph>
+                <SyntaxHighlighter language="sql" style={darcula}>
+                    SELECT * FROM Wheel
+                </SyntaxHighlighter>
                 <Title>Подключение по шагам</Title>
                 <Paragraph style={{fontSize: 20}}>
                     <ul>

@@ -4,7 +4,7 @@ import {Typography} from 'antd';
 import SyntaxHighlighter from "react-syntax-highlighter";
 import {darcula} from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-const {Paragraph, Text, Title} = Typography;
+const {Paragraph, Title} = Typography;
 
 export default class Socket extends React.Component {
     render() {

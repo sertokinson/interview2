@@ -6,7 +6,7 @@ import {darcula} from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const {Paragraph, Text, Title} = Typography;
 
-export default class Object extends React.Component {
+export default class ObjectJava extends React.Component {
     render() {
         return (
             <Typography>
@@ -80,7 +80,7 @@ export default class Object extends React.Component {
                     " int x;\n" +
                     " int y;\n" +
                     "\n" +
-                    " public Object clone()\n" +
+                    " public ObjectJava clone()\n" +
                     " {\n" +
                     "  return super.clone();\n" +
                     " }\n" +
@@ -95,7 +95,7 @@ export default class Object extends React.Component {
                     " int x;\n" +
                     " int y;\n" +
                     "\n" +
-                    " public Object clone()\n" +
+                    " public ObjectJava clone()\n" +
                     " {\n" +
                     "  Point point = new Point();\n" +
                     "  point.x = this.x;\n" +
