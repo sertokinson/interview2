@@ -104,6 +104,10 @@ export const content = [
         checked: false
     },
     {
+        header: 'PostgresSql',
+        checked: false
+    },
+    {
         header: 'Object',
         checked: false
     },
